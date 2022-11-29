@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+a {
+	text-decoration: none;
+}
+
+:root {
+	--clr-pale-blue: #e0e8ff;
+	--clr-very-pale-blue: #f5f7ff;
+	--clr-desaturated-blue: #7280a7;
+	--clr-dark-blue: #1f2f56;
+	--clr-bright-blue: #3829e0;
+	--clr-light-violet: #756af1;
+}
+
+$mediaMinWidth_desktop: 768px;
+
+body {
+	font-family: 'Red Hat Display', sans-serif;
+	font-size: 0.6rem;
+	background-image: url('../images/pattern-background-mobile.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: var(--clr-pale-blue);
+
+	@media screen and (min-width: $mediaMinWidth_desktop) {
+		background-image: url('../images/pattern-background-desktop.svg');
+	}
+}
+
+.container {
+	width: 215px;
+	margin-inline: auto;
+}
+
+main {
+	height: calc(100vh - 4rem);
+	display: grid;
+	align-content: center;
+}
+
+.card {
+	overflow: hidden;
+	border-radius: 1em;
+	box-shadow: 0 0 0.3em var(--clr-very-pale-blue);
+	background: #fff;
+
+	&__change-link,
+	&__proceed-button,
+	&__cancel-order-button {
+		cursor: pointer;
+	}
+
+	&__text-content {
+		display: grid;
+		gap: 0.75em;
+		text-align: center;
+		padding: 1.5em;
+	}
+
+	&__header {
+		font-size: 1rem;
+	}
+
+	p {
+		color: var(--clr-desaturated-blue);
+		padding: 0.25em;
+	}
+
+	&__line-item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 0.75em;
+		padding: 1em;
+		background: var(--clr-very-pale-blue);
+		border-radius: 0.5em;
+
+		img {
+			height: 25px;
+		}
+	}
+
+	&__annual-plan {
+		margin-right: auto;
+	}
+
+	&__annual-plan__heading {
+		font-weight: bold;
+	}
+
+	&__annual-plan__price {
+		color: var(--clr-desaturated-blue);
+	}
+
+	&__change-link {
+		color: var(--clr-bright-blue);
+		text-decoration: underline;
+		font-weight: bold;
+
+		&:hover {
+			text-decoration: none;
+			color: var(--clr-desaturated-blue);
+		}
+	}
+
+	&__proceed-button,
+	&__cancel-order-button {
+		font-size: 0.5rem;
+	}
+
+	&__proceed-button {
+		background: var(--clr-bright-blue);
+		color: #fff;
+		border-radius: 0.5em;
+		padding: 0.5rem 1rem;
+		margin-block: 0.5em;
+
+		&:hover {
+			background: var(--clr-light-violet);
+		}
+	}
+
+	&__cancel-order-button {
+		margin-bottom: 1em;
+	}
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	font-size: 0.8rem;
+	background: #fff;
+	padding: 1.3rem;
+	text-align: center;
+
+	a {
+		color: blue;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
